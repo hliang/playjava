@@ -3,41 +3,22 @@ abstract class Shape{
    public void display(){
      System.out.println("This is display method");
    }
+   // abstract method
    abstract public void calculateArea(); 
 }
  
-//class Rectangle extends Shape{
-class Rectangle {
+class Rectangle extends Shape{
+   // Rectangle is not abstract, so it MUST override abstract method calculateArea() in Shape.
+   // Add method calculateArea() of its own.
+   public void calculateArea(){
+     System.out.println("Area = ...");
+   }
+
    public static void main(String args[]){
       Rectangle obj = new Rectangle();
       obj.display();
-     //obj.b=200;
+
+      // cannot assign a value to final variable b
+      // obj.b=200;
   }
 }
-
-
-/*
-abstract class Shape
-{
-       void display()
-       {
-       }   
-}
-
-class Rectangle extends Shape
-{
-       void display()
-       {
-              System.out.println("You are using rectangle class");
-       }
-}
-
-class AbstractClassDemo
-{
-       public static void main(String args[])
-       {
-               Shape sObj = new Rectangle();
-               sObj.display();
-      }
-}
-*/
